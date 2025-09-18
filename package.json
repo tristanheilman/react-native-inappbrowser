@@ -1,0 +1,136 @@
+{
+  "name": "@tristanheilman/react-native-inappbrowser",
+  "version": "4.0.1",
+  "description": "Maintained fork of InAppBrowser for React Native",
+  "main": "./lib/commonjs/index.js",
+  "scripts": {
+    "flow": "flow check",
+    "lint": "eslint index.js",
+    "typecheck": "tsc",
+    "build": "bob build",
+    "postinstall": "opencollective-postinstall || true",
+    "prepare": "bob build",
+    "generate-types": "tsc --emitDeclarationOnly"
+  },
+  "typings": "./lib/typescript/commonjs/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tristanheilman/react-native-inappbrowser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tristanheilman/react-native-inappbrowser/issues"
+  },
+  "keywords": [
+    "react-native",
+    "React Native",
+    "JavaScript",
+    "Android",
+    "iOS",
+    "browser",
+    "InAppBrowser",
+    "in-app-browser",
+    "AppBrowser",
+    "Chrome",
+    "Safari",
+    "Chrome Custom Tabs",
+    "SafariServices",
+    "AuthenticationServices",
+    "SFSafariViewController",
+    "CustomTabsIntent",
+    "ChromeTabsManagerActivity"
+  ],
+  "author": "Tristan Heilman",
+  "homepage": "https://github.com/tristanheilman/react-native-inappbrowser",
+  "license": "MIT",
+  "codegenConfig": {
+    "name": "RNInAppBrowserSpec",
+    "type": "modules",
+    "jsSrcsDir": "./src",
+    "android": {
+      "javaPackageName": "com.tristanheilman.inappbrowser"
+    }
+  },
+  "peerDependencies": {
+    "react-native": ">=0.56"
+  },
+  "dependencies": {
+    "invariant": "^2.2.4",
+    "opencollective-postinstall": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@react-native-community/eslint-config": "^3.0.3",
+    "@types/invariant": "^2.2.37",
+    "@types/react-native": "^0.72.8",
+    "eslint": "^8.20.0",
+    "flow-bin": "^0.183.1",
+    "prettier": "^2.7.1",
+    "react-native": "0.75.5",
+    "react-native-builder-bob": "^0.30.3",
+    "typescript": "^5.6.3"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/proyecto26"
+  },
+  "source": "./src/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/commonjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/typescript/module/index.d.ts",
+        "default": "./lib/module/index.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/index.d.ts",
+        "default": "./lib/commonjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "android",
+    "ios",
+    "lib",
+    "babel.config.js",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "RNInAppBrowser.podspec",
+    "SECURITY.md",
+    "tsconfig.json",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "copyFlow": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "esm": true
+        }
+      ]
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
+}
